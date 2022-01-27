@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a href="/add-friend" className={styles.card}>
             <h2>One friend at a time &rarr;</h2>
             <p>
               Let's start by adding a single person you care about and want to
