@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/AddFriend.module.css";
 
@@ -12,8 +12,9 @@ const AddFriend: NextPage = () => {
 
   const [form, setForm] = useState(emptyForm);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
     setForm({ ...form, [name]: value });
   };
 
@@ -32,6 +33,14 @@ const AddFriend: NextPage = () => {
               type="text"
               name="name"
               value={form.name}
+              onChange={handleChange}></input>
+          </label>
+          <label>
+            Birthday:
+            <input
+              type="date"
+              name="birthday"
+              value={form.birthday}
               onChange={handleChange}></input>
           </label>
         </form>
